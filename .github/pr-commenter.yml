@@ -1,11 +1,11 @@
 comment:
   on-update: recreate
   header: |
-    Hey ${{ author }}, thank you for submitting this PR.
+    Thank you for contributing to this repository :tada:.
 
   footer: |
     ---
-    Please ping @J08K and @BethanyG for help!
+    Automated comment created by [PR Commenter](https://github.com/exercism/pr-commenter-action) :robot:.
 
   snippets:
     - id: any-markdown-file-changed
