@@ -6,7 +6,16 @@ jobs:
   pr-comment:
     runs-on: ubuntu-latest
     steps:
+      - name: Calculate some template variables
+        id: vars
+        run: |
+          echo ::set-output name=today::"$(date +%d-%m-%Y)"
+
       - uses: exercism/pr-commenter-action@v1.3.0
         with:
-          github-token: "${{ github.token }}"
-          config-file: ".github/pr-commenter.yml"
+          template-variables: |
+            {
+              "today": "${{ steps.vars.outputs.today }}",
+              "prAuthor": "${{ github.event.pull_request.user.login }}",
+              "branchNamePrefix": ${{ startsWith(github.event.pull_request.head.ref, 'ref-') }}
+            }
