@@ -1,4 +1,5 @@
-name: "PR Commenter"
+name: "Hacktoberfest PR Automation"
+description: "A GitHub workflow around PRs on the Python track of Exercism"
 on:
   - pull_request_target
 
@@ -6,16 +7,10 @@ jobs:
   pr-comment:
     runs-on: ubuntu-latest
     steps:
-      - name: Calculate some template variables
-        id: vars
-        run: |
-          echo ::set-output name=today::"$(date +%d-%m-%Y)"
-
       - uses: exercism/pr-commenter-action@v1.3.0
         with:
-          template-variables: |
-            {
-              "today": "${{ steps.vars.outputs.today }}",
-              "prAuthor": "${{ github.event.pull_request.user.login }}",
-              "branchNamePrefix": ${{ startsWith(github.event.pull_request.head.ref, 'ref-') }}
-            }
+          github-token: "${{ github.token }}"
+          config-file: ".github/pr-commenter.yml"
+          template_variables: {
+            "author": "${{ github.event.actor.login }}"
+          }

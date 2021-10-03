@@ -1,13 +1,84 @@
 comment:
-  on-update: recreate
+  on-update: edit
   header: |
-    Hi {{ prAuthor }}! Thank you for your contribution.
+    Hi {{ author }} & Welcome! 👋🏽 👋
 
-    {{^branchNamePrefix}}Your branch name doesn't start with the required prefix 'ref-'.{{/branchNamePrefix}}
+    **Thank you** for contributing to `exercism/python` 💛 💙 -- we really appreciate it! 🌟 🌈
+
+    This is an automated [🤖   🤖  ] comment for the  **maintainers** of this repository, notifying them of your contribution.  🎉 
+    You can safely ignore the section below the divide, and a maintainer will review/reply to your changes shortly.
+    (_usually within **72 hours**._)
+
+    ⚠️ **Please be aware**⚠️   
+    _This repo does not generally accept Pull Requests unless they are:_
+
+        1️⃣  --> From recent  & regular contributors  (within the last 6-8 months), 
+        2️⃣  --> Small, contained fixes for typos/grammar/punctuation/code syntax on [one] exercise,  
+        3️⃣  --> Have been pre-agreed via a filed issue.  
+
+    Pull Requests not in these categories **will be closed**.  😞 
 
   footer: |
     ---
-    Automated comment created by [PR Commenter](https://github.com/exercism/pr-commenter-action) :robot:.
+
+    <details>
+      <summary><b>Maintainers</b> 🛠️ </summary>
+      <br>
+      <details>
+      <summary><b>General Points</b></summary>
+
+      - ❓ Does this PR need to receive a [label]() with a reputation modifier (`x:size/{tiny,small,medium,large,massive}`)?  
+        -  `medium reputation`  is awarded by default.  See  [reputation: creating pull requests](https://github.com/exercism/docs/blob/main/product/reputation.md#4-creating-pull-requests) for details.
+      </details>
+      
+      <details>
+      <summary><b>For an Exercise change</b></summary>
+        <br> 
+        
+      -  [ ] 💌 - Does the author of the PR need to be added as author/contributor in `<exercise>/.meta/config.json` 
+                (see [docs on metaconfig.json](https://github.com/exercism/docs/blob/main/building/tracks/practice-exercises.md#file-metaconfigjson))?
+      -  [ ] 📜 - Does the design file (`<exercise>/.meta/design.md`) need to be updated to document new implementation decisions?
+      -  [ ] 🧪 - Are there test cases needed to cover this change?  Are they written correctly?
+      -  [ ] 📚 - If this is a change to an `exemplar.py`, does it pass all the associated tests using the test runner?
+      -  [ ] 👓 - If this is a change to `<exercise>_test.py`, does the `exemplar.py` still work?  Does it need editing?
+      -  [ ] 📝 - Are there changed needed (or included) for supporting documents (**e.g.** _concepts, abouts, instructions, hints_)?
+      -  [ ] 🍎 - Do the files need linting, formatting, or spell checking? 
+      -  [ ] 🔧 - Does the exercise or track `config.json` need updating?
+
+      </details>
+
+      <details>
+        <summary><b>For a New Exercise</b></summary>
+        <br>
+        
+      - [ ] Exercise `introduction.md`
+        - [ ]  Do all code examples compile, run, and return the shown output?
+        - [ ]  Are all the code examples formatted per the Python docs?
+      - [ ]  Exercise `instructions.md`
+      - [ ]  Exercise  `hints.md`
+      - [ ]   Check that exercise `design.md` was fulfilled or edited appropriately
+      - [ ]   Exercise `exemplar.py` 
+        - [ ]  Only uses syntax previously introduced or explained.
+        - [ ]  Is correct and appropriate for the exercise and story.
+      - [ ]   Exercise `<exercise_name>.py` (stub)
+        - [ ]  Includes appropriate docstrings and function names.
+        - [ ]  Includes `pass` for each function
+        - [ ]  Includes an EOL at the end
+      - [ ]   Exercise  `<exercise_name>_test.py`
+        - [ ]   Tests cover all (reasonable) inputs and scenarios
+        - [ ]   At least one test for each task in the exercise
+        - [ ]   If using subtests or fixtures they're formatted correctly for the runner
+        - [ ]   Classnames are `<ExerciseName>Test`
+        - [ ]   Test functions are `test_<test_name>`
+      - [ ]   Exercise `config.json` --> valid UUID4 
+      - [ ]   Corresponding concept `introduction.md` 
+      - [ ]   Corresponding concept `about.md` 
+      - [ ]   Concept  `config.json`
+      - [ ]   All Markdown Files :  Prettier linting (_for all markdown docs_)
+      - [ ]   All Code files: PyLint linting (**_except for test files_**)
+      - [ ]   All files with text:  Spell check & grammar review.
+        
+      </details>
 
   snippets:
     - id: any-markdown-file-changed
@@ -15,5 +86,6 @@ comment:
         - '*.md'
         - '**/*.md'
       body: |
-        It looks like you're changing a Markdown file.
-        Make sure your changes follow our [language guidelines](some-link) when writing documentation.
+        ---
+
+        Currently a filler for the snippets.
