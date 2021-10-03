@@ -10,7 +10,3 @@ jobs:
         with:
           github-token: "${{ github.token }}"
           config-file: ".github/pr-commenter.yml"
-          template-variables: |
-            {
-              "pr-author": "${{ github.event.actor.login }}"
-            }
