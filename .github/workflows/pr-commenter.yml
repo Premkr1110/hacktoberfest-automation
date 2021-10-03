@@ -1,5 +1,4 @@
-name: "Hacktoberfest PR Automation"
-description: "A GitHub workflow around PRs on the Python track of Exercism"
+name: "PR Commenter"
 on:
   - pull_request_target
 
