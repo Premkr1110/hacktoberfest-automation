@@ -1,7 +1,7 @@
 comment:
   on-update: edit
   header: |
-    Hi {{ author }} & Welcome! 👋🏽 👋
+    Hi & Welcome! 👋🏽 👋
 
     **Thank you** for contributing to `exercism/python` 💛 💙 -- we really appreciate it! 🌟 🌈
 
